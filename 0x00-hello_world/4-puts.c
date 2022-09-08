@@ -1,5 +1,7 @@
 #include<stdio.h>
-/* prints out the line */
+/**
+ * puts function demo
+ */
 int main(void)
 {
 	char nwStr[] = "\"Programming is like building a multiingual puzzle";
