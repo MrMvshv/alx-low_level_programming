@@ -59,7 +59,11 @@ void times_table(void)
 		i++;
 	}
 }
-
+/**
+ * abv_10 - format for characters above 10
+ *@r: result passed into func
+ * return: void
+ */
 void abv_10(int r)
 {
 	int m;
