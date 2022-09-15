@@ -25,7 +25,6 @@ void more_numbers(void)
 
 			if (j != 10)
 				_putchar(49);
-			
 			_putchar(j);
 
 			if (j == 10)
