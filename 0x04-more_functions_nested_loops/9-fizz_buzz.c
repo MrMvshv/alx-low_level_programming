@@ -11,24 +11,21 @@ int main(void)
 
 	for (m = 1; m < 101; m++)
 	{
-		if (((m % 3) == 0) && !((m % 5) == 0))
-		{
-			printf("Fizz ");
-		}
-		else if (((m % 5) == 0) && !((m % 3) == 0))
-		{
-			printf("Buzz ");
-		}
+		if (m % 3 == 0)
+			printf("Fizz");
+		else if (m % 5 == 0)
+			printf("Buzz");
 		else if (((m % 5) == 0) && ((m % 3) == 0))
-		{
-			printf("FizzBuzz ");
-		}
+			printf("FizzBuzz");
 		else
-		{
 			printf("%d ", m);
-		}
+
+		if (m < 100)
+			printf(" ");
+		else
+			printf("\n");
 	}
-	printf("\n");
+
 
 	return (0);
 }
