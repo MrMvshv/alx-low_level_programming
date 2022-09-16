@@ -15,17 +15,15 @@ int main(void)
 			printf("Fizz");
 		else if (m % 5 == 0)
 			printf("Buzz");
-		else if (((m % 5) == 0) && ((m % 3) == 0))
+		else if (m % 5 == 0 && m % 3 == 0)
 			printf("FizzBuzz");
 		else
-			printf("%d ", m);
+			printf("%d", m);
 
 		if (m < 100)
 			printf(" ");
 		else
 			printf("\n");
 	}
-
-
 	return (0);
 }
