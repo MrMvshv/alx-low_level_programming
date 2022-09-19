@@ -6,3 +6,4 @@ int _putchar(char c);
 void print_rev(char *s);
 void rev_string(char *s);
 int str_len(char *st);
+void puts2(char *str);
