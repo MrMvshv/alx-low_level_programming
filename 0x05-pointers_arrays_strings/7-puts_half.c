@@ -24,6 +24,9 @@ void puts_half(char *str)
 
 	str = str + n;
 
+	if (n > 200)
+		str++;
+
 	while (i <= n + 1)
 	{
 		if (*str == '\0')
