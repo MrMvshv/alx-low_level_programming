@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _strcat - appends src to dest string
  * @dest: destination string
@@ -9,13 +8,14 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i;
+	int i = 0;
 
 	while (*dest != '\0')
 	{
 		dest++;
 		i++;
 	}
+
 
 	while (*src != '\0')
 	{
@@ -26,6 +26,7 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 
+	*dest = '\0';
 	dest = dest - i;
 
 
