@@ -9,24 +9,21 @@
 
 char *leet(char *s)
 {
-	int i = 0;
+	int i, z;
+	char s1[] = "aeotl";
+	char s2[] = "AEOTL";
+	char s3[] = "43071";
 
-	while (*s != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (*s == 65 || *s == 97)
-			*s = 52;
-		else if (*s == 69 || *s == 101)
-			*s = 51;
-		else if (*s == 79 || *s == 111)
-			*s = 48;
-		else if (*s == 84 || *s == 116)
-			*s = 55;
-		else if (*s == 76 || *s == 108)
-			*s = 49;
-		s++;
-		i++;
+		for (z = 0; z < 5; z++)
+		{
+			if (s[i] == s1[z] || s[i] == s2[z])
+			{
+				s[i] = s3[z];
+				break;
+			}
+		}
 	}
-
-	s = s - i;
 	return (s);
 }
