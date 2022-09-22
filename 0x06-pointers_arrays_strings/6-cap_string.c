@@ -11,70 +11,36 @@ int checker(char *ptr);
 
 char *cap_string(char *s)
 {
-	char *ptr = s;
-	char up;
-	int i = 0;
-	int cd;
+	char sep[] = ",\t;\n; .!?\"(){}";
+	int cmp, i, z;
 
-	if (*ptr > 96 && *ptr < 123)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		up = *ptr - 32;
-		*ptr = up;
-		i++;
-	}
+		cmp = 0;
 
-	while (*ptr != 0)
-	{
-		cd = checker(ptr);
-
-		if (cd == 1)
+		if (i == 0)
 		{
-			ptr++;
-			i++;
-			if (*ptr > 96 && *ptr < 123)
-			{
-				up = *ptr - 32;
-				*ptr = up;
-				ptr++;
-				i++;
-			}
-			continue;
+			cmp = 1;
 		}
 		else
 		{
-			ptr++;
-			i++;
-			continue;
+			for (z = 0; sep[z] != '\0'; z++)
+			{
+				if (s[i - 1] == sep[z])
+				{
+					cmp = 1;
+					break;
+				}
+			}
+		}
+
+		if (cmp == 1)
+		{
+			if (s[i] <= 'z' && s[i] >= 'a')
+			{
+				s[i] -= 32;
+			}
 		}
 	}
-
-	ptr = ptr - i;
-
-	return (ptr);
-}
-/**
- * checker - checks for breaks
- * @ptr: string
- *
- * Return: 1 0r 0
- */
-
-int checker(char *ptr)
-{
-	int cd;
-
-	if (*ptr == ' ' || *ptr == '\t' || *ptr == ',')
-		cd = 1;
-	else if (*ptr == '\n' || *ptr == ';' || *ptr == '.')
-		cd = 1;
-	else if (*ptr == '!' || *ptr == '?' || *ptr == '\"')
-		cd = 1;
-	else if (*ptr == ')' || *ptr == '(' || *ptr == '{')
-		cd = 1;
-	else if (*ptr == '}')
-		cd = 1;
-	else
-		cd = 0;
-
-	return (cd);
+	return (s);
 }
