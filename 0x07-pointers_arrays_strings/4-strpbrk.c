@@ -8,9 +8,9 @@
  * Return: pointer to s or null
  */
 
- char *_strpbrk(char *s, char *accept)
- {
- 	int m = 0;
+char *_strpbrk(char *s, char *accept)
+{
+	int m = 0;
 	int n;
 	char *p;
 
@@ -31,4 +31,4 @@
 	}
 
 	return (0);
- }
+}
