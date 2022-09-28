@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 int endA(char *s, int n);
 
@@ -14,21 +15,28 @@ int flg = 0;
  */
 void _print_rev_recursion(char *s)
 {
-	if (n == 0 && flg == 0)
+	if (flg == 0)
 	{
 		n = endA(s, m);
+		printf("counted");
 	}
+	else if (n == 0)
+	{
+		printf("n is zero\n");
+		return;
+	}
+	printf("main, n: %d", n);
 	n -= 1;
 
 	_putchar(s[n]);
 
+	printf("main n: %d c: %c", n, s[n]);
 	if (n > 0)
 	{
 		_print_rev_recursion(s);
-		s--;
-	}
-	return;
 
+		printf("main");
+	}
 }
 /**
  * endA - gets length and takes pointer to end
