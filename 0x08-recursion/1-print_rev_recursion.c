@@ -24,10 +24,11 @@ void _print_rev_recursion(char *s)
 	}
 	n -= 1;
 
-	_putchar(s[n]);
 
-	if (n > 0)
+	if (n >= 0)
 	{
+
+		_putchar(s[n]);
 		_print_rev_recursion(s);
 
 	}
