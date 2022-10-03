@@ -76,6 +76,6 @@ int main(int argc, char *argv[])
 
 	coins = coinsN(cents);
 
-	printf("coins: %d\n", coins);
+	printf("%d\n", coins);
 	return (0);
 }
