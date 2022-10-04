@@ -63,7 +63,7 @@ char **arrstr(char *str, int len)
 		{
 			str++;
 		}
-		else if (*str == 32 && *(str + 1) == '\0')
+		else if (*str == 32 && *(str + 1) == '\0' && len < 2)
 		{
 			return (NULL);
 		}
