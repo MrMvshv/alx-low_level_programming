@@ -65,7 +65,7 @@ char **arrstr(char *str, int len)
 		}
 		else if (*str != 32)
 		{
-			while (*str != 32)
+			while ((*str != 32) && (*str != '\0'))
 			{
 				m++;
 				str++;
