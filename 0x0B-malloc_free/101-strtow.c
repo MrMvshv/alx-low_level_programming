@@ -59,13 +59,9 @@ char **arrstr(char *str, int len)
 		m = 0;
 		k = 0;
 
-		if (*str == 32 && !(*(str + 1) == '\0'))
+		if (*str == 32)
 		{
 			str++;
-		}
-		else if (*str == 32 && *(str + 1) == '\0' && len < 2)
-		{
-			return (NULL);
 		}
 		else if (*str != 32)
 		{
