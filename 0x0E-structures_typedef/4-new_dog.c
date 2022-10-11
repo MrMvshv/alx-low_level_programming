@@ -40,7 +40,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 		return (NULL);
 	}
-	
+
 	for (i = 0; i <= n; i++)
 		d->name[i] = name[i];
 
