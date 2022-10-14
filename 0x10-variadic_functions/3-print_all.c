@@ -40,30 +40,14 @@ void pFloat(va_list *a)
  */
 void pStr(va_list *a)
 {
+	if (!a)
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", va_arg(*a, char *));
 }
 
-/**
- * get - gets a printer function
- * @pr: structure with type (ty) and corresponding printer (f)
- * @t: type char to compare
- *
- * Return: pointer to suitable printer function
- */
-void (*get(printA * pr, char t))(va_list *)
-{
-	int i = 0;
-
-	while (pr[i].ty)
-	{
-		if (*pr[i].ty == t)
-		{
-			return (pr[i].f);
-		}
-		i++;
-	}
-	return (pr[i].f);
-}
 /**
  * print_all - prints everything
  * @format: list of types of arguments passed
@@ -74,8 +58,7 @@ void print_all(const char * const format, ...)
 {
 	char *f = "";
 	va_list args;
-	int i;
-	void (*getfunc)(va_list *);
+	int i, j;
 
 	printA pr[] = {
 		{"c", pChar},
@@ -87,15 +70,18 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format != NULL && pr[i].ty != NULL)
+	while (format && format[i])
 	{
-		getfunc = get(pr, format[i]);
-
-		if (getfunc)
+		j = 0;
+		while (j < 4)
 		{
-			printf("%s", f);
-			getfunc(&args);
-			f = ", ";
+			if (*pr[j].ty == format[i])
+			{
+				printf("%s", f);
+				f = ", ";
+				pr[j].f(&args);
+			}
+			j++;
 		}
 		i++;
 	}
