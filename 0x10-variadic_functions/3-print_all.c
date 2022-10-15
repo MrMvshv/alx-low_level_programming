@@ -40,12 +40,15 @@ void pFloat(va_list *a)
  */
 void pStr(va_list *a)
 {
-	if (a == NULL)
+	char *m;
+
+	m = va_arg(*a, char *);
+	if (m == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", va_arg(*a, char *));
+	printf("%s", m);
 }
 
 /**
