@@ -40,7 +40,7 @@ void pFloat(va_list *a)
  */
 void pStr(va_list *a)
 {
-	if (*a == NULL)
+	if (a == NULL)
 	{
 		printf("(nil)");
 		return;
