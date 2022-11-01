@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-
+cpu | head
 /**
  * print_binary - prints an int in binary
  * @n: int
@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 	}
 
 	j--;
-
+	printf("%d\n", j);
 	for (i = j; i >= 0; i--)
 	{
 		int k = n >> i;
