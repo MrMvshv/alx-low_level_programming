@@ -23,7 +23,6 @@ void print_binary(unsigned long int n)
 	}
 
 	j--;
-	printf("%d\n", j);
 	for (i = j; i >= 0; i--)
 	{
 		int k = n >> i;
