@@ -21,10 +21,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	ht->array[idx] = malloc(sizeof(hash_node_t));
 	if (ht->array[idx] == NULL)
+	{	free(ht->array[idx]);
 		return (0);
+	}
 	ht->array[idx]->key = strdup(key);
+	if (ht->array[idx]->key == NULL)
+	{	free(ht->array[idx]->key);
+		free(ht->array[idx]);
+		return (0);
+	}
 	ht->array[idx]->value = strdup(value);
 	ht->array[idx]->next = NULL;
 	return (1);
-
 }

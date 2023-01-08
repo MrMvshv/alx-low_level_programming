@@ -15,12 +15,23 @@ int main(void)
 
     hash_table_array_size = 1024;
     s = "cisfun";
+    printf("%s\n", s);
     printf("%lu\n", hash_djb2((unsigned char *)s));
     printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-    s = "Don't forget to tweet today";
+    s = "hetairas";
+    printf("%s\n", s);
     printf("%lu\n", hash_djb2((unsigned char *)s));
     printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-    s = "98";
+    s = "mentioner";
+    printf("%s\n", s);
+    printf("%lu\n", hash_djb2((unsigned char *)s));
+    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+    s = "heliotropes";
+    printf("%s\n", s);
+    printf("%lu\n", hash_djb2((unsigned char *)s));
+    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+    s = "neurospora";
+    printf("%s\n", s);
     printf("%lu\n", hash_djb2((unsigned char *)s));
     printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
     return (EXIT_SUCCESS);
