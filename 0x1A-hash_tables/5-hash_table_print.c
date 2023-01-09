@@ -9,6 +9,7 @@
 int test_hash(const hash_table_t *ht, unsigned long int idx)
 {
 	unsigned long int s = 0;
+
 	for (s = (idx + 1); s < ht->size; s++)
 	{
 		if (ht->array[s] == NULL)
