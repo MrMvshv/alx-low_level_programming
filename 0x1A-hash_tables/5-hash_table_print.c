@@ -28,6 +28,7 @@ int test_hash(const hash_table_t *ht, unsigned long int idx)
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int s = 0;
+	hash_node_t *nd;
 
 	if (ht == NULL)
 		return;
@@ -36,10 +37,14 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (ht->array[s] == NULL)
 			continue;
-		printf("\'%s\':\'%s\'", ht->array[s]->key, ht->array[s]->value);
-		if (test_hash(ht, s) == 1)
-			printf(", ");
-
+		nd = ht->array[s];
+		while (nd != NULL)
+		{
+			printf("\'%s\': \'%s\'", nd->key, nd->value);
+			nd = nd->next;
+			if (test_hash(ht, s) == 1)
+				printf(", ");
+		}
 	}
 	printf("}\n");
 }
