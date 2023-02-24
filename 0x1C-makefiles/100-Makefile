@@ -8,13 +8,13 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) -Wall -Werror -Wextra -pedantic -o $@ $^
 
 school.o: school.c m.h
-	gcc $(CFLAGS) -c $<
+	gcc -Wall -Werror -Wextra -pedantic -c $<
 
 main.o: main.c m.h
-	gcc $(CFLAGS) -c $<
+	gcc  -Wall -Werror -Wextra -pedantic -c $<
 
 clean:
 	$(RM) *.o $(NAME) *~ .*~ *.swp
