@@ -7,8 +7,10 @@ grid is a list of list of integers
 Grid cells are not diagonally connected
 Grid is rectangular, width and height don’t exceed 100
 Grid is completely surrounded by water, and there is one island (or nothing).
-The island doesn’t have “lakes” (water inside that isn’t connected to the water around the island).
+The island doesn’t have “lakes”
 """
+
+
 def island_perimeter(grid):
     """ calculates perimeter of island
         represemted in grid
