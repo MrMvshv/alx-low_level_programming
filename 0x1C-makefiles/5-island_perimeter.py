@@ -20,6 +20,9 @@ def island_perimeter(grid):
     height = len(grid)
     width = len(grid)
 
+    if height > 100 or width > 100:
+        return None
+
     while y < height:
         x = 0
         while x < width:
@@ -31,7 +34,7 @@ def island_perimeter(grid):
                     perimeter += 1
                 if grid[y][x + 1] == 0:
                     perimeter += 1
-                if grid[y + 1][x] == 0:
+                if y == height - 1 or grid[y + 1][x] == 0:
                     perimeter += 1
             x += 1
         y += 1
