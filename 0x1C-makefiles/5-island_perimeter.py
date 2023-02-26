@@ -24,8 +24,6 @@ def island_perimeter(grid):
         x = 0
         while x < width:
             cell = grid[y][x]
-            print(f"coordinates: {x},{y}")
-            print("cell is :", cell)
             if cell != 0:
                 if y == 0 or grid[y - 1][x] == 0:
                     perimeter += 1
