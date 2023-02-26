@@ -30,9 +30,9 @@ def island_perimeter(grid):
             if cell != 0:
                 if y == 0 or grid[y - 1][x] == 0:
                     perimeter += 1
-                if grid[y][x - 1] == 0:
+                if x == 0 or grid[y][x - 1] == 0:
                     perimeter += 1
-                if grid[y][x + 1] == 0:
+                if x == width - 1 or grid[y][x + 1] == 0:
                     perimeter += 1
                 if y == height - 1 or grid[y + 1][x] == 0:
                     perimeter += 1
