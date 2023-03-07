@@ -79,7 +79,19 @@ int main(int argc, char **argv)
 			break;
 	}
 
-	printf("Version:                           %d\n", elf_header.e_ident[EI_VERSION]);
+	printf("Version:                           ");
+	switch (elf_header.e_ident[EI_VERSION])
+	{
+		case EV_NONE:
+			printf("Invalid version\n");
+			break;
+		case EV_CURRENT:
+			printf("1 (current)\n");
+			break;
+		default:
+			printf("Unknown version\n");
+			break;
+	}
 
 	printf("OS/ABI:                            ");
 	switch (elf_header.e_ident[EI_OSABI])
