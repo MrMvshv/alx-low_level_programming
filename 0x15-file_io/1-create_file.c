@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 	if (text_content)
 	{
 		char *s = text_content;
-		int i;
+		int i = 0;
 
 		while (*s)
 		{
