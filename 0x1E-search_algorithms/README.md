@@ -42,31 +42,31 @@ You can assume that value won’t appear more than once in array
 If value is not present in array or if array is NULL, your function must return -1
 You must print the array being searched every time it changes. (e.g. at the beginning and when you search a subarray)
 
-<h3>File: [1-binary.c](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/1-binary.c)</h3>
+File: [1-binary.c](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/1-binary.c)
 
 
 <h2>2. Big O #0</h2>
 What is the time complexity (worst case) of a linear search in an array of size n?
 
-<h3>File: [2-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/2-0)</h3>
+File: [2-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/2-0)
 
 
 <h2>3. Big O #1</h2>
 What is the space complexity (worst case) of an iterative linear search algorithm in an array of size n?
 
-<h3>File: [3-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/3-0)</h3>
+File: [3-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/3-0)
 
 
 <h2>4. Big O #2</h2>
 What is the time complexity (worst case) of a binary search in an array of size n?
 
-<h3>File: [4-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/4-0)</h3>
+File: [4-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/4-0)
 
 
 <h2>5. Big O #3</h2>
 What is the space complexity (worst case) of a binary search in an array of size n?
 
-<h3>File: [5-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/5-0)</h3>
+File: [5-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/5-0)
 
 
 <h2>6. Big O #4</h2>
@@ -85,4 +85,4 @@ int **allocate_map(int n, int m)
      return (map);
 }
 
-<h3>File: [6-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/6-0)</h3>
+File: [6-0](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/6-0)
