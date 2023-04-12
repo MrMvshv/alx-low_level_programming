@@ -13,6 +13,8 @@ void printArray(int *array, int i, int Asize)
 	{
 		printf(" %d", array[i]);
 		i++;
+		if (i != Asize)
+			printf(",");
 	}
 	printf("\n");
 }
