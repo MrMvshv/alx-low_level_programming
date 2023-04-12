@@ -27,7 +27,7 @@ Your function must return the first index where value is located
 If value is not present in array or if array is NULL, your function must return -1
 Every time you compare a value in the array to the value you are searching, you have to print this value.
 
-<h3>File: [0-linear.c](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/0-linear.c)</h3>
+File: [0-linear.c](https://github.com/MrMvshv/alx-low_level_programming/blob/main/0x1E-search_algorithms/0-linear.c)
 
 <h2>1. Binary search</h2>
 Write a function that searches for a value in a sorted array of integers using the Binary search algorithm
