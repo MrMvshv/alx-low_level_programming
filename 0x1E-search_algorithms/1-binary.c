@@ -42,7 +42,7 @@ int binary_search(int *array, size_t size, int value)
 		nw = (Asize - i) / 2;
 		if (Asize % 2 == 0 && nw != 1)
 			nw--;
-		middle = middle + nw;
+		middle = i + nw;
 		if (array[middle] == value)
 		{	return (middle);
 		}
