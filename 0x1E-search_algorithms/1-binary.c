@@ -28,41 +28,28 @@ void printArray(int *array, int i, int Asize)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int middle, Asize, i, nw;
+	int middle, Asize, i;
 
 	Asize = (int)size;
 	i = 0;
 	middle = 0;
-	nw = 0;
 	if (array == NULL)
 		return (-1);
-	printArray(array, i, Asize);
-	while (i < Asize)
+	while (i <= Asize)
 	{
-		nw = (Asize - i) / 2;
-		if (Asize % 2 == 0 && nw != 1)
-			nw--;
-		middle = i + nw;
+		printf("i->%d, Asize->%d, middle->%d\n", i, Asize, middle);
+		middle = i + (Asize - i) / 2;
 		if (array[middle] == value)
-		{	return (middle);
-		}
-		else if (i == (Asize - 1) && value > array[i])
-		{	return (-1);
-		}
-		else if (array[i] == value)
-		{	return (i);
+		{	printArray(array, middle, Asize);
+			return (middle);
 		}
 		else if (array[middle] < value)
-		{	i = middle + 1;
-			printArray(array, i, Asize);
-		}
-		else if (array[middle] > value)
-		{	Asize = middle;
-			middle = i;
-			printArray(array, i, Asize);
+		{	printArray(array, i, Asize);
+			i = middle + 1;
 		}
 		else
-		{	return (-1);
+		{	printArray(array, i, Asize);
+			Asize = middle - 1;
 		}
 	}
 	return (-1);
