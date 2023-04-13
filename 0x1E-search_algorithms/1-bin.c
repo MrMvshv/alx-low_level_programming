@@ -1,38 +1,56 @@
-#include <stdio.h>
+#include "search_algos.h"
+/**
+ * printArray - prints the array
+ * @array: array pointer
+ * @i: start index
+ * @Asize: end index
+ *
+ */
+void printArray(int *array, int i, int Asize)
+{
+	printf("Searching in array:");
+	while (i < Asize)
+	{
+		printf(" %d", array[i]);
+		i++;
+		if (i != Asize)
+			printf(",");
+	}
+	printf("\n");
+}
+/**
+ * binary_search - search for value in int array using binary search
+ * @array: array pointer
+ * @size: num of elements in array
+ * @value: value to search for
+ *
+ * Return: index where value is located, or -1
+ */
+int binary_search(int *array, size_t size, int value)
+{
+	int middle, Asize, i;
 
-int binary_search(int *array, size_t size, int value) {
-    if (array == NULL || size == 0) {
-        return -1;
-    }
-
-    size_t left = 0;
-    size_t right = size - 1;
-
-    while (left <= right) {
-        size_t middle = left + (right - left) / 2;
-        if (array[middle] == value) {
-            printf("Array: ");
-            for (size_t i = 0; i < size; i++) {
-                printf("%d ", array[i]);
-            }
-            printf("\n");
-            return middle;
-        } else if (array[middle] < value) {
-            printf("Array: ");
-            for (size_t i = 0; i <= middle; i++) {
-                printf("%d ", array[i]);
-            }
-            printf("\n");
-            left = middle + 1;
-        } else {
-            printf("Array: ");
-            for (size_t i = middle; i < size; i++) {
-                printf("%d ", array[i]);
-            }
-            printf("\n");
-            right = middle - 1;
-        }
-    }
-
-    return -1;
+	Asize = (int)size;
+	i = 0;
+	middle = 0;
+	if (array == NULL)
+		return (-1);
+	while (i <= Asize)
+	{
+		printf("i->%d, Asize->%d, middle->%d\n", i, Asize, middle);
+		middle = i + (Asize - i) / 2;
+		if (array[middle] == value)
+		{	printArray(array, middle, Asize);
+			return (middle);
+		}
+		else if (array[middle] < value)
+		{	printArray(array, i, Asize);
+			i = middle + 1;
+		}
+		else
+		{	printArray(array, i, Asize);
+			Asize = middle - 1;
+		}
+	}
+	return (-1);
 }

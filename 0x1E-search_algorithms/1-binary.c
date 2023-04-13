@@ -19,6 +19,32 @@ void printArray(int *array, int i, int Asize)
 	printf("\n");
 }
 /**
+ * binarySearch - binary searches recursively
+ * @array: array pointer
+ * @size: size of array
+ * @value: to search for
+ *
+ * Return: index found
+ */
+int binarySearch(int *array, size_t size, int value)
+{
+	size_t mid = size / 2;
+
+	if (array == NULL || size == 0)
+		return (-1);
+
+	printArray(array, 0, size);
+
+	if (mid && size % 2 == 0)
+		mid--;
+	if (array[mid] == value)
+		return ((int)mid);
+	if (array[mid] > value)
+		return (binarySearch(array, mid, value));
+	mid++;
+	return (mid + binarySearch(array + mid, size - mid, value));
+}
+/**
  * binary_search - search for value in int array using binary search
  * @array: array pointer
  * @size: num of elements in array
@@ -28,29 +54,10 @@ void printArray(int *array, int i, int Asize)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int middle, Asize, i;
+	int i;
 
-	Asize = (int)size;
-	i = 0;
-	middle = 0;
-	if (array == NULL)
+	i = binarySearch(array, size, value);
+	if (i >= 0 && array[i] != value)
 		return (-1);
-	while (i <= Asize)
-	{
-		printf("i->%d, Asize->%d, middle->%d\n", i, Asize, middle);
-		middle = i + (Asize - i) / 2;
-		if (array[middle] == value)
-		{	printArray(array, middle, Asize);
-			return (middle);
-		}
-		else if (array[middle] < value)
-		{	printArray(array, i, Asize);
-			i = middle + 1;
-		}
-		else
-		{	printArray(array, i, Asize);
-			Asize = middle - 1;
-		}
-	}
-	return (-1);
+	return (i);
 }
